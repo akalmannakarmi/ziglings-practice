@@ -29,7 +29,7 @@ pub fn main() void {
     // The main() function can not be async. But we know
     // getBeef() will not suspend with this particular
     // invocation. Please make this okay:
-    var my_beef = getBeef(0);
+    const my_beef = nosuspend getBeef(0);
 
     print("beef? {X}!\n", .{my_beef});
 }
@@ -54,11 +54,11 @@ fn getBeef(input: u32) u32 {
 // without these safety features.
 //
 // Instead of a safe panic when something goes wrong, your
-// program will now exhibit Undefined Behavior (UB), which simply
+// program will now exhibit Undefined Behaviowhich simply
 // means that the Zig language does not (cannot) define what will
 // happen. The best case is that it will crash, but in the worst
 // case, it will continue to run with the wrong results and
-// corrupt your data or expose you to security risks.
+// corrupt your data or expose you to security risks.r (UB), 
 //
 // This program is a great way to explore UB. Once you get it
 // working, try calling the getBeef() function with the value
